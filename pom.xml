@@ -4,7 +4,7 @@
 
     <groupId>com.moraes</groupId>
     <artifactId>wildfly-swarm-helloworld</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>war</packaging>
 
     <name>wildfly-swarm-helloworld</name>
@@ -17,6 +17,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.wildfly.swarm>2017.10.0</version.wildfly.swarm>
         <version.servlet.api>3.1.0</version.servlet.api>
+        <version.cdi.api>2.0</version.cdi.api>
+        <version.transaction.api>1.2</version.transaction.api>
+        <version.hibernate.jpa.api>1.0.1.Final</version.hibernate.jpa.api>
+        <version.postgresql>9.4-1206-jdbc42</version.postgresql>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +41,29 @@
             <artifactId>javax.servlet-api</artifactId>
             <version>${version.servlet.api}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>${version.cdi.api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+            <version>${version.transaction.api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${version.hibernate.jpa.api}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${version.postgresql}</version>
         </dependency>
     </dependencies>
 
