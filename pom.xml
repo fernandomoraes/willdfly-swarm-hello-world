@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.wildfly.swarm>2017.10.0</version.wildfly.swarm>
         <version.servlet.api>3.1.0</version.servlet.api>
+        <version.jaxrs.api>3.0.12.Final</version.jaxrs.api>
         <version.cdi.api>2.0</version.cdi.api>
         <version.transaction.api>1.2</version.transaction.api>
         <version.hibernate.jpa.api>1.0.1.Final</version.hibernate.jpa.api>
@@ -37,9 +38,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${version.servlet.api}</version>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>jaxrs-api</artifactId>
+            <version>${version.jaxrs.api}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
