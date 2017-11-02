@@ -25,3 +25,12 @@ should respond:
 ```.json
 {"status":"ok"}
 ```
+
+### 1.1.0
+JPA, CDI and JTA support with postgres database
+
+You can use Docker to run the postgres database instance:
+```.sh
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=12345 -d postgres
+```
+
