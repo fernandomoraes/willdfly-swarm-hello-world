@@ -22,6 +22,7 @@
         <version.transaction.api>1.2</version.transaction.api>
         <version.hibernate.jpa.api>1.0.1.Final</version.hibernate.jpa.api>
         <version.postgresql>9.4-1206-jdbc42</version.postgresql>
+        <version.jackson>2.4.5</version.jackson>
     </properties>
 
     <dependencyManagement>
@@ -65,6 +66,18 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${version.postgresql}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${version.jackson}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${version.jackson}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

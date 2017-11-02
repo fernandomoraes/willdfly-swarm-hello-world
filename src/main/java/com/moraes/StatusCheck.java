@@ -1,5 +1,7 @@
 package com.moraes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -10,6 +12,7 @@ public class StatusCheck {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @JsonIgnore
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -19,6 +22,17 @@ public class StatusCheck {
     @Column(name = "CHECKED_IN", nullable = false, updatable = false)
     private LocalDateTime in;
 
+    public Long getId() {
+        return id;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public LocalDateTime getIn() {
+        return in;
+    }
 
     protected StatusCheck() {
     }

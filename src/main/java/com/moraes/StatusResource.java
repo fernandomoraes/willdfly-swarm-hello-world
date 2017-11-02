@@ -17,7 +17,7 @@ public class StatusResource {
 
     @GET
     public Response check () {
-        checkerService.checkNow(StatusCheck.Status.OK);
-        return Response.ok("{\"status\": \"ok\"}").build();
+        final StatusCheck check = checkerService.checkNow(StatusCheck.Status.OK);
+        return Response.ok(check).build();
     }
 }

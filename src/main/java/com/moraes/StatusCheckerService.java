@@ -12,8 +12,10 @@ public class StatusCheckerService {
     private EntityManager em;
 
     @Transactional
-    public void checkNow (StatusCheck.Status status) {
-        em.persist(StatusCheck.now(status));
+    public StatusCheck checkNow (StatusCheck.Status status) {
+        final StatusCheck check = StatusCheck.now(status);
+        em.persist(check);
+        return check;
     }
 
 }
