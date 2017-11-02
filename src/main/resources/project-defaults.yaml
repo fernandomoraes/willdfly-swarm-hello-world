@@ -6,7 +6,7 @@ swarm:
         xa-datasource-class-name: org.postgresql.xa.PGXADataSource
         driver-module-name: org.postgresql
     data-sources:
-      ExampleDS:
+      HelloWorldDS:
         driver-name: org.postgresql
         connection-url: jdbc:postgresql://localhost:5432/swarm_helloworld
         user-name: postgres
