@@ -23,7 +23,8 @@
         <version.hibernate.jpa.api>1.0.1.Final</version.hibernate.jpa.api>
         <version.postgresql>9.4-1206-jdbc42</version.postgresql>
         <version.jackson>2.4.5</version.jackson>
-        <version.liquibase.plugin>3.0.5</version.liquibase.plugin>
+        <version.liquibase.cdi>3.5.3</version.liquibase.cdi>
+        <version.liquibase.sl4j>1.2.1</version.liquibase.sl4j>
     </properties>
 
     <dependencyManagement>
@@ -80,6 +81,16 @@
             <version>${version.jackson}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-cdi</artifactId>
+            <version>${version.liquibase.cdi}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mattbertolini</groupId>
+            <artifactId>liquibase-slf4j</artifactId>
+            <version>${version.liquibase.sl4j}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -96,29 +107,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>${version.liquibase.plugin}</version>
-                <configuration>
-                    <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.postgresql</groupId>
-                        <artifactId>postgresql</artifactId>
-                        <version>${version.postgresql}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>

@@ -11,3 +11,8 @@ swarm:
         connection-url: jdbc:postgresql://localhost:5432/swarm_hello_world
         user-name: swarm_hello_world_system
         password: swarm_hello_world_system
+      MigrationsDS:
+        driver-name: org.postgresql
+        connection-url: jdbc:postgresql://localhost:5432/swarm_hello_world
+        user-name: migrations
+        password: migrations
