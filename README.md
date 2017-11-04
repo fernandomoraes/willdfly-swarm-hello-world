@@ -79,3 +79,10 @@ To bootstrap database configuration, the init.sql was created. If you use Docker
 docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 \
 -v $PWD/init.sql:/docker-entrypoint-initdb.d/init.sql -d postgres
 ```
+
+### 1.4.0 [WIP]
+Run Liquibase through CDI listener.
+
+<b>Note</b>: About the warnings on startup:
+* https://liquibase.jira.com/browse/CORE-2472
+* https://liquibase.jira.com/browse/CORE-3046
