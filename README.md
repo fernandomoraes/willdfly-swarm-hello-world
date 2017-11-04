@@ -37,7 +37,7 @@ docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=12345 -d postg
 ### 1.2.0
 JAX-RS and Jackson support.
 
-Note: when the application is started through ```mvn wildfly-swarm:run```, the following warning is displayed:
+<b>Note</b>: when the application is started through ```mvn wildfly-swarm:run```, the following warning is displayed:
 
 ```.sh
 WARN  [org.jboss.as.weld] (ServerService Thread Pool -- 2) WFLYWELD0052: Using deployment classloader to load 
@@ -47,7 +47,7 @@ org.jboss.weld.spi]
 ```
 about the warning, the following issue exists: https://issues.jboss.org/browse/SWARM-1280
 
-Note 2: to debug the application, the following ways can be used:
+<b>Note 2</b>: to debug the application, the following ways can be used:
 
 ```.sh
 java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 \
@@ -69,3 +69,13 @@ or, add to swarm maven plugin:
 debug options: http://www.adam-bien.com/roller/abien/entry/what_are_the_options_of
 
 swarm properties: https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/configuration_properties.html
+
+
+### 1.3.0
+Liquibase initial support.
+
+To bootstrap database configuration, the init.sql was created. If you use Docker, you can run the following:
+```.sh
+docker run --name some-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 \
+-v $PWD/init.sql:/docker-entrypoint-initdb.d/init.sql -d postgres
+```
