@@ -7,11 +7,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "STATUS_CHECK")
+@SequenceGenerator(name = "STATUS_CHECK_SEQUENCE", sequenceName = "STATUS_CHECK_SEQUENCE", allocationSize = 1)
 public class StatusCheck {
 
     @Id
     @Column(name = "ID")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "STATUS_CHECK_SEQUENCE")
     @JsonIgnore
     private Long id;
 

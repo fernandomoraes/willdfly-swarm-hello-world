@@ -8,6 +8,6 @@ swarm:
     data-sources:
       HelloWorldDS:
         driver-name: org.postgresql
-        connection-url: jdbc:postgresql://localhost:5432/swarm_helloworld
-        user-name: postgres
-        password: 12345
+        connection-url: jdbc:postgresql://localhost:5432/swarm_hello_world
+        user-name: swarm_hello_world_system
+        password: swarm_hello_world_system
